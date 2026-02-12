@@ -10,7 +10,7 @@ const BRAND = {
   whatsappNumber: "966505192091",
   phoneDisplay: "+966 50 519 2091",
   email: "info@luxuryleather.org",
-  website: "luxuryleather.org"
+  website: "luxury-leather.pages.dev"
 };
 
 const CATEGORIES = [
