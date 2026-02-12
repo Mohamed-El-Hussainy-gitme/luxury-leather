@@ -191,23 +191,39 @@ const PRODUCTS = [
   },
 
   {
-    id: "leather-display-frame",
-    category: "displays",
-    title: { ar: "إطارات عرض جلدية", en: "Leather Display Frames" },
-    tagline: { ar: "للعرض الرسمي والقطع التذكارية", en: "Elegant tri-fold display for memorable moments" },
-    description: {
-      ar: "إطار عرض جلدي بتصميم ثلاثي وأنيق لعرض الصور أو المحتوى التذكاري بشكل رسمي. مناسب للمكاتب والضيافة والتكريم، مع إمكانية التخصيص.",
-      en: "A premium tri-fold leather display frame designed for official desks and commemorative pieces—refined presentation with customization options."
-    },
-    features: {
-      ar: ["تصميم ثلاثي قابل للطي", "جلد فاخر وتشطيب متقن", "مناسب للعرض على المكتب", "تخصيص حسب الطلب"],
-      en: ["Tri-fold, desk-friendly design", "Premium leather finishing", "Ideal for official display", "Customizable on request"]
-    },
-    images: [
-      "assets/products/frame_leather_trifold.jpg"
+  id: "desk-organizer-calendar",
+  category: "desk-organizers",
+  title: { ar: "تقاويم مكتبية", en: "Desk Calendars" },
+  tagline: { ar: "تقاويم يومية/شهرية بتصاميم عملية", en: "Daily/monthly calendars with practical designs" },
+  description: {
+    ar: "تقاويم مكتبية مناسبة للاستخدام اليومي داخل الجهات والمكاتب. متاحة بعدة موديلات (مثل KH15 / KH13 / KH07 / KH16 / KH12) مع إمكانية التخصيص حسب الطلب.",
+    en: "Desk calendars ideal for daily office use. Available in multiple models (KH15 / KH13 / KH07 / KH16 / KH12) with customization on request."
+  },
+  features: {
+    ar: [
+      "خيارات متعددة للموديلات والمقاسات",
+      "تصميم ثابت وسهل القراءة على المكتب",
+      "مناسبة للهدايا المؤسسية والاستخدام اليومي",
+      "إمكانية إضافة شعار الجهة أو الاسم"
+    ],
+    en: [
+      "Multiple models and sizes",
+      "Stable, desk-friendly design",
+      "Ideal for corporate gifting and daily use",
+      "Logo/name customization available"
     ]
-  }
-];
+  },
+  images: [
+    "assets/products/cal_kh15_open.jpg",
+    "assets/products/cal_kh15_side.jpg",
+    "assets/products/cal_kh13.jpg",
+    "assets/products/cal_kh07.jpg",
+    "assets/products/cal_kh16.jpg",
+    "assets/products/cal_kh12.jpg",
+    "assets/products/cal_pyramid_set.jpg"
+  ]
+},
+]
 
 const I18N = {
   ar: {
