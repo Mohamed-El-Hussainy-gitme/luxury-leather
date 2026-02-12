@@ -1,4 +1,4 @@
-/* ========================================================== 
+/* ==========================================================
    Luxury Leather — Static Landing Page
    Files separated: HTML / CSS / JS
    ========================================================== */
@@ -413,7 +413,9 @@ a{
   width: 100%;
   height: 420px;
   object-fit: cover;
-  transform: scale(1.02);
+  object-position: center;
+  transform: none;
+  background: rgba(0,0,0,.18);
 }
 .media-card__overlay{
   position: absolute;
@@ -447,8 +449,10 @@ a{
   border: 1px solid rgba(255,255,255,.12);
   height: 110px;
   width: 100%;
-  object-fit: cover;
-  opacity: .92;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(0,0,0,.22);
+  opacity: .96;
   box-shadow: var(--shadow-soft);
 }
 
@@ -614,10 +618,16 @@ a{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.03);
-  transition: transform .5s ease;
+  object-position: center;
+  transform: none;
+  transition: transform .45s ease;
+  background: rgba(0,0,0,.14);
 }
-.card:hover .card__media img{ transform: scale(1.08); }
+
+/* Only zoom on devices that actually support hover */
+@media (hover: hover){
+  .card:hover .card__media img{ transform: scale(1.06); }
+}
 
 .card__badge{
   position: absolute;
@@ -1059,7 +1069,9 @@ a{
 .modal__media img{
   width: 100%;
   height: 360px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(0,0,0,.25);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.12);
 }
@@ -1089,8 +1101,10 @@ a{
 .thumb img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: .88;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(0,0,0,.22);
+  opacity: .92;
 }
 .thumb.is-active{ border-color: rgba(215,178,106,.48); }
 .thumb.is-active img{ opacity: 1; }
@@ -1164,124 +1178,76 @@ a{
   transform: translateY(0);
 }
 
-/* Direction tweaks */
-[dir="ltr"] .nav__links{ margin-inline: auto; }
-[dir="ltr"] .thumbs{ direction: ltr; }
-
-
 /* ==========================================================
-   FIX: Better image fit + mobile gallery polish (APPEND ONLY)
+   Gallery + Mobile polish (fix rounded corners, prevent over-crop, remove overflow)
    ========================================================== */
 
-/* منع أي قصّ/زووم مبالغ في الصور داخل الكروت والهيرو */
-.media-card img,
-.media-grid img,
-.card__media img{
-  transform: none !important;
-  object-position: center !important;
+@media (max-width: 520px){
+  /* Tighter container to avoid "too wide" feeling */
+  .container{ width: calc(100% - 1.25rem); }
+
+  /* Allow header items to wrap instead of forcing horizontal overflow */
+  .topbar__inner{ flex-wrap: wrap; row-gap: .35rem; }
+  .topbar__right{ flex-wrap: wrap; justify-content: flex-start; }
+
+  .nav__inner{ flex-wrap: wrap; row-gap: .6rem; }
+  .brand__logo{ height: 40px; }
+
+  .btn{ padding: .72rem .95rem; }
+  .btn--ghost{ width: 40px; height: 40px; border-radius: 12px; }
+
+  /* Hero media */
+  .media-card{ border-radius: 20px; }
+  .media-card img{ height: 340px; border-radius: inherit; }
+
+  .media-grid{ grid-template-columns: repeat(2, 1fr); }
+  .media-grid img{ height: 96px; }
 }
 
-/* الزووم يكون فقط على الأجهزة التي تدعم hover (ديسكتوب) */
-@media (hover: hover) and (pointer: fine){
-  .card:hover .card__media img{ transform: scale(1.04) !important; }
-  .media-card:hover img{ transform: scale(1.015) !important; }
-}
-
-/* ==========================================================
-   Modal / Gallery: ضبط العرض على الموبايل (بدون قصّ)
-   ========================================================== */
-
+/* Modal should never overflow horizontally on mobile */
 .modal__panel{
   max-height: 92vh;
+  overflow: auto;
 }
 
-.modal__body{
-  max-height: 92vh;
-}
-
-/* صورة المودال: contain + ارتفاع مرن حسب الشاشة */
-.modal__media img{
-  width: 100%;
-  height: clamp(240px, 46vh, 460px);
-  object-fit: contain !important;
-  object-position: center !important;
-  background: rgba(0,0,0,.18);
-}
-
-:root[data-theme="light"] .modal__media img{
-  background: rgba(0,0,0,.05);
-}
-
-/* شريط thumbnails: أنظف + scroll أفقي */
-.thumbs{
-  display: flex !important;
-  gap: .55rem;
-  overflow-x: auto;
-  padding: .35rem .15rem .55rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.thumbs::-webkit-scrollbar{ display: none; }
-
-.thumb{
-  flex: 0 0 66px;
-  height: 50px;
-  border-radius: 14px;
-  scroll-snap-align: start;
-  overflow: hidden;
-}
-.thumb img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* في الموبايل الصغير: تصغير thumbnails أكثر */
-@media (max-width: 420px){
-  .thumb{ flex-basis: 58px; height: 44px; }
-}
-
-/* في الموبايل: المودال ياخذ عرض أكبر و padding أقل */
+/* Mobile: make thumbnails a horizontal scroller (clean corners + no squish) */
 @media (max-width: 900px){
-  .modal__panel{
-    width: calc(100% - 1rem);
-    margin: 2vh auto;
-  }
-
   .modal__media{
-    padding: .75rem;
     border-inline-end: 0;
     border-bottom: 1px solid rgba(255,255,255,.10);
   }
   :root[data-theme="light"] .modal__media{
     border-bottom: 1px solid rgba(0,0,0,.10);
   }
+}
 
-  .modal__content{
-    padding: 1rem 1rem 1.1rem;
+@media (max-width: 680px){
+  .modal__panel{ width: calc(100% - 1rem); margin: 2vh auto; }
+  .modal__media{ padding: .85rem; }
+  .modal__media img{ height: min(46vh, 340px); }
+
+  .thumbs{
+    display: flex;
+    gap: .55rem;
+    overflow-x: auto;
+    padding-bottom: .25rem;
+    grid-template-columns: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .thumb{
+    flex: 0 0 64px;
+    height: 56px;
+    scroll-snap-align: start;
+    border-radius: 14px;
   }
 }
 
-/* ==========================================================
-   FIX: منع أي عرض زائد/تمدد على الهاتف (Overflow)
-   ========================================================== */
-
-.site-header,
-.nav,
-.hero,
-.section,
-.modal__panel{
-  max-width: 100%;
+/* Reduce accidental "zoom" feeling for touch devices (no hover) */
+@media (hover: none){
+  .media-card img{ transform: none !important; }
 }
 
-/* تحسين لف النافبار على الموبايل (بدون تغيير تصميم) */
-@media (max-width: 520px){
-  .nav__inner{ flex-wrap: wrap; }
-  .nav__actions{ flex-wrap: wrap; }
-  .topbar__inner{ flex-wrap: wrap; }
-  .topbar__right{ flex-wrap: wrap; }
-}
-/* -------- Navbar -------- */
-
+/* Direction tweaks */
+[dir="ltr"] .nav__links{ margin-inline: auto; }
+[dir="ltr"] .thumbs{ direction: ltr; }
