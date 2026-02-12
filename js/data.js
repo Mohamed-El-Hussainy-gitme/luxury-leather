@@ -23,326 +23,188 @@ const CATEGORIES = [
   { id: "displays", label: { ar: "عرض وتقديم", en: "Presentation & Display" } }
 ];
 
+// ==========================================================
+// PRODUCTS
+// ✅ كل منتج = كولكشن صور خاص به (زوايا/ألوان/فتح-غلق)
+// ✅ أول صورة في كل منتج = أفضل Cover للبطاقة (أقل قص/زوم)
+// ==========================================================
 const PRODUCTS = [
   {
-    id: "deskset-royal-green",
+    id: "deskset-executive",
     category: "desk-sets",
-    title: {
-      ar: "مجموعة مكتب تنفيذية — الأخضر الملكي",
-      en: "Executive Desk Set — Royal Green"
-    },
-    tagline: {
-      ar: "مكتب مرتب… وهيبة تسبق الكلام.",
-      en: "A disciplined desk. A presence that speaks first."
-    },
+    title: { ar: "مجموعات المكتب التنفيذية", en: "Executive Desk Set Collection" },
+    tagline: { ar: "تنظيم فاخر يليق بمكتبك — تنفيذ حسب الهوية", en: "Premium organization — tailored to your brand" },
     description: {
-      ar: "مجموعة مكتبية جلدية فاخرة تُظهر الهوية بشكل راقٍ، وتمنح المكتب لمسة بروتوكولية. مناسبة للمكاتب التنفيذية، هدايا كبار الشخصيات، وتجهيزات الجهات الرسمية.",
-      en: "A premium leather desk set designed to elevate executive workspaces with a polished, protocol-ready presence. Ideal for VIP gifts and official offices."
+      ar: "مجموعة مكتبية متكاملة من الجلد الفاخر، تشمل قطعاً عملية لرفع مستوى المكتب وتوحيد المظهر العام. تتوفر بألوان وخيارات متعددة مع إمكانية إضافة الشعار والاسم.",
+      en: "A complete luxury-leather desk set designed for executive offices. Multiple pieces, precise finishing, and full branding options (logo, name, custom layout) with a selection of colors."
     },
     features: {
-      ar: [
-        "إمكانية إضافة شعار الجهة بطباعة ذهبية أو نقش",
-        "تنسيق عناصر المجموعة حسب احتياج المكتب",
-        "تشطيب حواف وخياطة دقيقة لثبات أطول"
-      ],
-      en: [
-        "Logo customization: gold stamping or engraving",
-        "Elements can be arranged based on desk workflow",
-        "Precise stitching and clean edges for durability"
-      ]
+      ar: ["جلد فاخر وتشطيب يدوي", "مجموعة متعددة القطع", "تخصيص بالشعار والاسم", "ألوان وتكوينات متنوعة"],
+      en: ["Premium leather & hand finishing", "Modular multi-piece set", "Logo/name customization", "Multiple colors and configurations"]
     },
     images: [
-      "assets/products/deskset_green.jpg"
-    ]
-  },
-
-  {
-    id: "deskset-teal",
-    category: "desk-sets",
-    title: {
-      ar: "مجموعة مكتب تنفيذية — لمسة تيال",
-      en: "Executive Desk Set — Teal Edition"
-    },
-    tagline: {
-      ar: "تفاصيل هادئة… فخامة غير صاخبة.",
-      en: "Quiet details. Confident luxury."
-    },
-    description: {
-      ar: "خيار أنيق للجهات التي تفضّل الهدوء البصري مع حضور فاخر. تصميم متوازن يمنح المكتب اتساقًا مع سهولة الاستخدام اليومي.",
-      en: "A refined choice for brands that prefer subtle sophistication. Balanced design that keeps the desk consistent and functional every day."
-    },
-    features: {
-      ar: [
-        "ألوان وخامات قابلة للتخصيص حسب هوية الجهة",
-        "مناسبة كهدايا رسمية للمناسبات والوفود",
-        "تنفيذ دقيق يليق بالاجتماعات والمكاتب القيادية"
-      ],
-      en: [
-        "Colors and materials tailored to your brand identity",
-        "Perfect as protocol gifts for events and delegations",
-        "Crafted to match executive environments"
-      ]
-    },
-    images: [
-      "assets/products/deskset_teal.jpg"
+      "assets/products/deskset_teal.jpg",
+      "assets/products/deskset_green.jpg",
+      "assets/products/deskset_emerald_full.jpg",
+      "assets/products/deskset_sand_full.jpg",
+      "assets/products/deskset_obsidian.jpg",
+      "assets/products/deskset_render.jpg"
     ]
   },
 
   {
     id: "giftbox-emerald",
     category: "gift-boxes",
-    title: {
-      ar: "صندوق هدايا فاخر — زمردي",
-      en: "Premium Gift Box — Emerald"
-    },
-    tagline: {
-      ar: "من أول نظرة… تُفهم قيمة الهدية.",
-      en: "Value understood at first glance."
-    },
+    title: { ar: "صندوق هدايا زمردي", en: "Emerald Gift Box" },
+    tagline: { ar: "تفاصيل فاخرة لتجربة تقديم لا تُنسى", en: "A premium unboxing experience" },
     description: {
-      ar: "صندوق جلد فاخر بتفاصيل ذهبية وتجهيز داخلي منظم. مناسب للهدايا الرسمية، تكريم الضيوف، والمناسبات الخاصة للجهات.",
-      en: "A luxury leather gift box with gold accents and a neat interior layout—made for official gifting, guest honors, and high-end corporate occasions."
+      ar: "صندوق هدايا فاخر بتصميم جلدي أنيق، مناسب للهدايا الرسمية، الدروع، والمناسبات المؤسسية. خيارات داخلية قابلة للتخصيص حسب المحتوى.",
+      en: "A luxury gift box with elegant leather finishing—ideal for corporate awards, VIP gifts, and special occasions. Interior layout can be customized to fit your items."
     },
     features: {
-      ar: [
-        "إمكانية تصميم التقسيمات الداخلية حسب المحتوى",
-        "خيار إضافة شعار/اسم مناسبة على الغطاء",
-        "تغليف يليق بالبروتوكول والهدايا الرسمية"
-      ],
-      en: [
-        "Interior compartments can be designed per item",
-        "Add your logo or event title on the lid",
-        "Protocol-ready presentation for official gifting"
-      ]
+      ar: ["إغلاق محكم وتشطيب راقٍ", "ترتيب داخلي حسب الطلب", "قابل للطباعة والنقش", "مثالي للهدايا الرسمية"],
+      en: ["Secure closure & refined finishing", "Custom interior layout", "Branding: print/emboss/plate", "Designed for corporate gifting"]
     },
     images: [
       "assets/products/box_emerald_closed.jpg",
-      "assets/products/box_emerald_open.jpg"
+      "assets/products/box_emerald_open.jpg",
+      "assets/products/box_emerald_top.jpg"
     ]
   },
 
   {
     id: "giftbox-skyline",
     category: "gift-boxes",
-    title: {
-      ar: "صندوق هدايا — إصدار المدينة",
-      en: "Gift Box — Skyline Edition"
-    },
-    tagline: {
-      ar: "تفاصيل سعودية… وإخراج فاخر للهدية.",
-      en: "Saudi-inspired details, luxury presentation."
-    },
+    title: { ar: "صندوق هدايا Skyline", en: "Skyline Gift Box" },
+    tagline: { ar: "تصميم أسود وذهبي بلمسة فنية", en: "Black & gold — designed to stand out" },
     description: {
-      ar: "تصميم مستوحى من روح المدينة وتفاصيلها — مع تنفيذ جلدي فاخر يليق بالهدايا الرسمية. مناسب للفعاليات، الجوائز، والهدايا المؤسسية.",
-      en: "A city-inspired design with a premium leather finish. Ideal for events, awards, and corporate gifting with a local touch."
+      ar: "صندوق هدايا بواجهة فنية ولمسات ذهبية، يبرز الهوية ويمنح الهدية قيمة أعلى. مناسب للفعاليات والمؤتمرات مع خيارات تخصيص كاملة.",
+      en: "A statement gift box with premium black finish and gold detailing—perfect for events, conferences, and premium giveaways. Fully customizable for your brand."
     },
     features: {
-      ar: [
-        "إمكانية تعديل التصميم ليناسب هوية الجهة",
-        "خامة جلد فاخرة ولمسة ذهبية راقية",
-        "حل مثالي لتجهيزات الفعاليات والوفود"
-      ],
-      en: [
-        "Design can be adapted to your brand identity",
-        "Premium leather with refined gold accents",
-        "Perfect for events, delegations, and ceremonies"
-      ]
+      ar: ["تفاصيل ذهبية ولمسة فخامة", "خيارات داخلية متنوعة", "مناسب للمؤتمرات والفعاليات", "تخصيص كامل للهوية"],
+      en: ["Premium finish with gold details", "Multiple interior configurations", "Ideal for conferences & events", "Full customization available"]
     },
     images: [
-      "assets/products/box_skyline.jpg"
+      "assets/products/box_skyline.jpg",
+      "assets/products/box_skyline_open.jpg"
     ]
   },
 
   {
-    id: "presentation-box-wood-leather",
+    id: "presentation-boxes",
     category: "displays",
-    title: {
-      ar: "صندوق تقديم — خشب وجلد",
-      en: "Presentation Box — Wood & Leather"
-    },
-    tagline: {
-      ar: "عرض مرتب… يجعل الهدية تجربة كاملة.",
-      en: "A neat presentation that turns a gift into an experience."
-    },
+    title: { ar: "صناديق عرض خشب وجلد", en: "Wood & Leather Presentation Boxes" },
+    tagline: { ar: "عرض فخم للمجموعات والقطع المميزة", en: "Premium presentation for premium items" },
     description: {
-      ar: "صندوق تقديم بهيكل خشبي مع سطح جلدي فاخر وتجهيز داخلي أنيق. مناسب للهدايا متعددة القطع، الدروع، أو تجهيزات التكريم.",
-      en: "A premium presentation box combining a wooden structure with a leather top and elegant inner layout—ideal for multi-piece gifts and honors."
+      ar: "صناديق عرض تجمع بين الخشب والجلد لتقديم القطع أو المجموعات بشكل راقٍ ومنظم. مناسبة للهدايا المؤسسية والنسخ الخاصة مع تقسيمات داخلية متعددة.",
+      en: "Presentation boxes combining wood structure with leather finishing—ideal for curated sets and special editions. Configurable interiors and branding options."
     },
     features: {
-      ar: [
-        "غطاء جلدي قابل للطباعة/النقش حسب الطلب",
-        "تقسيمات داخلية قابلة للتعديل حسب المحتوى",
-        "اختيار ممتاز للهدايا الرسمية والجوائز"
-      ],
-      en: [
-        "Leather lid can be stamped/engraved on request",
-        "Inner compartments can be customized",
-        "A strong option for official gifts and awards"
-      ]
+      ar: ["خشب متين مع كسوة جلدية", "تقسيمات داخلية متعددة", "إغلاق آمن/غطاء شفاف حسب التصميم", "خيارات تخصيص للشعار والاسم"],
+      en: ["Solid wood with leather finishing", "Multi-compartment interior layouts", "Secure closure / optional clear lid", "Logo & naming customization"]
     },
     images: [
       "assets/products/box_wood_leather.jpg",
+      "assets/products/box_wood_closed.jpg",
+      "assets/products/display_case_green.jpg",
       "assets/products/display_case.jpg"
     ]
   },
 
   {
-    id: "award-folder-black",
+    id: "award-folders",
     category: "awards",
-    title: {
-      ar: "ملف تكريم — غطاء فاخر",
-      en: "Ceremony Folder — Premium Cover"
-    },
-    tagline: {
-      ar: "لحظة تكريم… تحتاج إطارًا يليق بها.",
-      en: "A moment of honor deserves the right frame."
-    },
+    title: { ar: "ملفات تكريم وشهادات", en: "Ceremony & Award Folders" },
+    tagline: { ar: "للمناسبات الرسمية… حضور يليق بالتكريم", en: "Because recognition deserves a premium finish" },
     description: {
-      ar: "غلاف تكريم/شهادة بتشطيب جلد فاخر، مناسب لحفلات التكريم والجهات التي تهتم بالتفاصيل. قابل للتخصيص بالشعار أو اسم المناسبة.",
-      en: "A premium leather ceremony folder for certificates and honors—customizable with logos and event titles."
+      ar: "ملفات تكريم وشهادات بتصميم جلدي فاخر، مناسبة للحفلات الرسمية والجهات الحكومية والشركات. تتوفر بألوان متعددة مع خيارات للطباعة، النقش، أو اللوحات المعدنية.",
+      en: "Luxury leather award and certificate folders for official ceremonies and corporate recognition. Available in multiple colors with print/emboss/metal plate branding."
     },
     features: {
-      ar: [
-        "مناسب للشهادات والوثائق الرسمية",
-        "خيار ألوان متعددة (أسود/أخضر/كحلي…)",
-        "تشطيب فخم يليق بالصور التذكارية"
-      ],
-      en: [
-        "Perfect for certificates and official documents",
-        "Multiple color options (black/green/navy…)",
-        "A premium finish for memorable moments"
-      ]
+      ar: ["أغلفة جلدية فاخرة", "تخصيص: طباعة/نقش/لوحة معدنية", "ألوان ومقاسات متعددة", "مناسبة للشهادات والوثائق الرسمية"],
+      en: ["Premium leather covers", "Branding: print, emboss, or metal plate", "Multiple sizes and colors", "Perfect for certificates and official documents"]
     },
     images: [
-      "assets/products/award_folder_black.jpg"
+      "assets/products/folder_award_blue_plate.jpg",
+      "assets/products/award_folder_black.jpg",
+      "assets/products/folder_green_emblem.jpg",
+      "assets/products/folder_ndu.jpg",
+      "assets/products/folder_nursing_green.jpg",
+      "assets/products/folder_teal_charity.jpg",
+      "assets/products/folder_green_airports.jpg",
+      "assets/products/folder_brown_arabic.jpg",
+      "assets/products/folder_brown_embossed.jpg"
     ]
   },
 
   {
-    id: "doc-folder-security",
+    id: "corporate-portfolios",
     category: "portfolios",
-    title: {
-      ar: "فولدر وثائق — إصدار رسمي",
-      en: "Document Folder — Official Edition"
-    },
-    tagline: {
-      ar: "حماية وتنظيم… بشكل يليق بالجهة.",
-      en: "Protection and organization—done properly."
-    },
+    title: { ar: "محافظ وملفات تنفيذية", en: "Corporate Portfolios & Document Holders" },
+    tagline: { ar: "تنظيم عملي… ومظهر مؤسسي موحد", en: "Practical organization with a premium look" },
     description: {
-      ar: "فولدر جلد فاخر لترتيب المستندات والمراسلات، مناسب للاجتماعات، التوقيعات، والملفات الحساسة. يمكن تنفيذ مقاسات داخلية حسب الاستخدام.",
-      en: "A premium leather folder for documents and meetings—ideal for signatures, presentations, and sensitive files, with optional custom sizing."
+      ar: "محافظ وملفات مستندات بتصاميم داخلية متنوعة (جيوب، مشابك، إغلاق مغناطيسي)، مناسبة للاجتماعات والفعاليات والملفات الرسمية. قابلة للتخصيص وفق هوية الجهة.",
+      en: "Executive portfolios and document holders in multiple layouts—pockets, pen loops, clips, magnetic closures—ideal for meetings, events, and official files. Fully branded to your identity."
     },
     features: {
-      ar: [
-        "جيوب داخلية حسب الطلب (بطاقات/أوراق/تقارير)",
-        "إمكانية إضافة شعار الجهة",
-        "خامة عملية للاستخدام اليومي"
-      ],
-      en: [
-        "Custom inner pockets (cards/papers/reports)",
-        "Add your organization logo",
-        "Built for daily professional use"
-      ]
+      ar: ["تصاميم داخلية متعددة", "خيارات إغلاق متنوعة", "مقاسات مختلفة حسب الاستخدام", "تخصيص كامل للهوية"],
+      en: ["Multiple interior layouts", "Flexible closure options", "Different sizes per use-case", "Fully customizable branding"]
     },
     images: [
-      "assets/products/doc_folder_security.jpg"
+      "assets/products/portfolio_blue_open_01.jpg",
+      "assets/products/portfolio_blue_open_02.jpg",
+      "assets/products/portfolio_black_binder.jpg",
+      "assets/products/doc_folder_security.jpg",
+      "assets/products/portfolio_pockets_green.jpg",
+      "assets/products/portfolio_green_simple.jpg",
+      "assets/products/folder_cit_blue.jpg",
+      "assets/products/portfolio_aou_blue_01.jpg",
+      "assets/products/portfolio_aou_blue_02.jpg",
+      "assets/products/portfolio_aou_green.jpg",
+      "assets/products/folder_blue_round_01.jpg",
+      "assets/products/folder_blue_round_02.jpg"
     ]
   },
 
   {
-    id: "portfolio-aou-green",
-    category: "portfolios",
-    title: {
-      ar: "فولدر مؤسسي — أخضر فاخر",
-      en: "Corporate Portfolio — Luxury Green"
-    },
-    tagline: {
-      ar: "هوية واضحة… وتفاصيل تعكس الاحتراف.",
-      en: "Clear identity. Professional detail."
-    },
-    description: {
-      ar: "فولدر أنيق للوثائق والعروض التقديمية. مناسب لتجهيزات الجهات والجامعات والشركات — مع إمكانية طباعة الشعار أو الاسم.",
-      en: "A sleek portfolio for documents and presentations—made for institutions, universities, and companies with optional logo personalization."
-    },
-    features: {
-      ar: [
-        "مناسب للعروض والاجتماعات والملفات الرسمية",
-        "خياطة متقنة ومظهر فاخر",
-        "تنفيذ متعدد المقاسات حسب المحتوى"
-      ],
-      en: [
-        "Ideal for meetings, pitches, and official files",
-        "Precise stitching and premium look",
-        "Multiple sizes based on content needs"
-      ]
-    },
-    images: [
-      "assets/products/portfolio_aou_green.jpg"
-    ]
-  },
-
-  {
-    id: "deskpad-purple",
+    id: "office-accessories",
     category: "desk-accessories",
-    title: {
-      ar: "لبادة مكتب جلد — منحنى بنفسجي",
-      en: "Leather Desk Pad — Curved Purple"
-    },
-    tagline: {
-      ar: "مساحة مريحة… وتفاصيل تغيّر شكل المكتب.",
-      en: "A comfortable surface that transforms the desk."
-    },
+    title: { ar: "إكسسوارات مكتبية", en: "Office Accessories" },
+    tagline: { ar: "تفاصيل صغيرة… تصنع فرقاً كبيراً", en: "Small details that elevate the whole desk" },
     description: {
-      ar: "لبادة مكتب فاخرة بسطح ناعم وانحناءة أنيقة، تمنح تجربة استخدام أجمل وترتيبًا أفضل للمكتب. مناسبة كهدايا شركات أو تجهيزات مكاتب.",
-      en: "A premium desk pad with a smooth surface and elegant curves—enhancing comfort and elevating desk aesthetics. Great for office setups and corporate gifts."
+      ar: "مجموعة من الإكسسوارات المكتبية المصممة لتكمل هوية المكتب: مساند، حوامل، بطاقات تعريف، وبادات مكتبية. تنفيذ دقيق مع خيارات تخصيص واسعة.",
+      en: "A curated set of office accessories to complete your workspace identity—stands, holders, nameplates, ID wallets, and desk pads. Precision-made with broad customization options."
     },
     features: {
-      ar: [
-        "سطح مريح للاستخدام اليومي",
-        "مقاسات وألوان حسب الطلب",
-        "إمكانية إضافة شعار الجهة"
-      ],
-      en: [
-        "Comfortable surface for daily use",
-        "Custom sizes and color options",
-        "Optional logo personalization"
-      ]
+      ar: ["لوحات اسم وهوية", "حوامل عرض ومساند", "بادات مكتبية جلدية", "مناسبة للهدايا المؤسسية"],
+      en: ["Nameplates & branding elements", "Display stands and holders", "Leather desk pads", "Perfect for corporate gifting"]
     },
     images: [
+      "assets/products/nameplate_hajj.jpg",
+      "assets/products/deskpad_purple_flat.jpg",
+      "assets/products/idholders_blue_set.jpg",
+      "assets/products/display_stand_blue.jpg",
+      "assets/products/display_stand_blue_alt.jpg",
       "assets/products/deskpad_purple.jpg"
     ]
   },
 
   {
-    id: "display-stand-navy",
+    id: "leather-display-frame",
     category: "displays",
-    title: {
-      ar: "ستاند عرض جلدي — كحلي",
-      en: "Leather Display Stand — Navy"
-    },
-    tagline: {
-      ar: "عرض أنيق… للوثائق واللوحات والشعارات.",
-      en: "An elegant stand for documents, plaques, and logos."
-    },
+    title: { ar: "إطارات عرض جلدية", en: "Leather Display Frames" },
+    tagline: { ar: "للعرض الرسمي والقطع التذكارية", en: "Elegant tri-fold display for memorable moments" },
     description: {
-      ar: "ستاند عرض بلمسة جلدية فاخرة، مناسب للاستقبال، المكاتب، والمعارض. يضيف مظهرًا رسميًا للهوية أو الشهادة أو لوحة التكريم.",
-      en: "A premium leather display stand—ideal for receptions, offices, and exhibitions, adding a formal touch to certificates, brand marks, and honors."
+      ar: "إطار عرض جلدي بتصميم ثلاثي وأنيق لعرض الصور أو المحتوى التذكاري بشكل رسمي. مناسب للمكاتب والضيافة والتكريم، مع إمكانية التخصيص.",
+      en: "A premium tri-fold leather display frame designed for official desks and commemorative pieces—refined presentation with customization options."
     },
     features: {
-      ar: [
-        "مناسب للاستقبال والمعارض والفعاليات",
-        "تنفيذ ثابت مع تشطيب فاخر",
-        "إمكانية تخصيص المقاس والهوية"
-      ],
-      en: [
-        "Great for receptions, exhibitions, and events",
-        "Stable build with premium finishing",
-        "Custom sizing and branding available"
-      ]
+      ar: ["تصميم ثلاثي قابل للطي", "جلد فاخر وتشطيب متقن", "مناسب للعرض على المكتب", "تخصيص حسب الطلب"],
+      en: ["Tri-fold, desk-friendly design", "Premium leather finishing", "Ideal for official display", "Customizable on request"]
     },
     images: [
-      "assets/products/display_stand_blue.jpg"
+      "assets/products/frame_leather_trifold.jpg"
     ]
   }
 ];
@@ -360,7 +222,7 @@ const I18N = {
     "nav.whatsapp": "واتساب الآن",
 
     "hero.kicker": "Luxury Leather • الجلد الفاخر",
-    "hero.title": "هدايا جلدية تليق بالمقام… وتبقى أثرًا",
+    "hero.title": "هدايا جلدية تليق بالفخامة التي تدوم. وتبقى أثرًا",
     "hero.subtitle": "تصاميم سعودية بروح فاخرة — من مجموعات المكتب التنفيذية حتى صناديق الهدايا والتكريم. تنفيذ حسب الطلب مع إمكانية إضافة شعار الجهة واسم المناسبة.",
     "hero.ctaPrimary": "اطلب عرض سعر",
     "hero.ctaSecondary": "تواصل واتساب",
@@ -377,10 +239,10 @@ const I18N = {
     "collections.searchPlaceholder": "ابحث عن منتج...",
     "product.view": "عرض التفاصيل",
 
-    "craft.title": "حِرفة تُرى… وتُلمس",
+    "craft.title": "طقم مكتبي",
     "craft.p1": "كل قطعة تُصنع لتخدم سنوات، وتبدو أجمل مع الوقت. نعتني بالقصّ، والخياطة، واللمسات المعدنية، حتى تصبح القطعة جديرة بالهدية الرسمية أو الاستخدام اليومي.",
     "craft.li1": "تشطيبات نظيفة وحواف مُتقنة",
-    "craft.li2": "خيارات ألوان تلائم الهوية السعودية (أخضر/أسود/ذهبي)",
+    "craft.li2": "خيارات ألوان من الجلد الفاخر",
     "craft.li3": "مقاسات مخصصة حسب المحتوى والاحتياج",
     "craft.link": "شاركنا فكرة الهدية… ونقترح أفضل تنفيذ",
 
@@ -431,13 +293,13 @@ const I18N = {
 
     "wa.default": "السلام عليكم، أود الاستفسار عن منتجات Luxury Leather.",
     "wa.product": "السلام عليكم، أود طلب عرض سعر لمنتج: {product} — الفئة: {category}.",
-    "wa.form": "السلام عليكم، أود طلب عرض سعر.
+    "wa.form": `السلام عليكم، أود طلب عرض سعر.
 الاسم: {name}
 الجهة: {company}
-رقم التواصل: {phone}
+الرقم: {phone}
 الفئة: {category}
 المنتج: {product}
-التفاصيل: {message}"
+التفاصيل: {message}`
   },
 
   en: {
@@ -523,12 +385,12 @@ const I18N = {
 
     "wa.default": "Hello, I’d like to inquire about Luxury Leather products.",
     "wa.product": "Hello, I'd like a quote for: {product} — Category: {category}.",
-    "wa.form": "Hello, I'd like a quote.
+    "wa.form": `Hello, I'd like a quote.
 Name: {name}
 Company: {company}
 Phone: {phone}
 Category: {category}
 Product: {product}
-Details: {message}"
+Details: {message}`
   }
 };
